@@ -1,5 +1,11 @@
+import * as fs from "node:fs/promises";
+
 const remove = async () => {
-    // Write your code here 
+  try {
+    await fs.unlink("./src/fs/files/fileToRemove.txt");
+  } catch (error) {
+    throw new Error("FS operation failed");
+  }
 };
 
 await remove();
